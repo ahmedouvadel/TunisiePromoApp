@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "378964418563",
+    "project_id": "tunisiepromo-4a3b2",
+    "storage_bucket": "tunisiepromo-4a3b2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378964418563:android:e405770046c0994aaaae36",
+        "android_client_info": {
+          "package_name": "com.example.projrcttunisiepromo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrErPNlc9lievQVUVPlY7Em4IXQXIgk1w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
