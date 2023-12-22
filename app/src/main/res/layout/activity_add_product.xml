@@ -6,4 +6,81 @@
     android:layout_height="match_parent"
     tools:context=".AddProduct">
 
+    <EditText
+        android:background="@drawable/edit_text_bg"
+        android:id="@+id/editTextProductName"
+        android:layout_width="322dp"
+        android:layout_height="52dp"
+        android:hint="  Product Name"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextProductID" />
+
+    <EditText
+        android:background="@drawable/edit_text_bg"
+        android:id="@+id/editTextProductPrice"
+        android:layout_width="322dp"
+        android:layout_height="52dp"
+        android:hint="  Product Price"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextProductName" />
+
+    <EditText
+        android:background="@drawable/edit_text_bg"
+        android:id="@+id/editTextProductID"
+        android:layout_width="322dp"
+        android:layout_height="52dp"
+        android:hint="  Product ID"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSelectImage" />
+
+    <Button
+        android:id="@+id/buttonSelectImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextProductName"
+        android:layout_marginTop="30dp"
+        android:text="Select Image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewProduct" />
+
+    <ImageView
+        android:id="@+id/imageViewProduct"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@id/buttonSelectImage"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonAddProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageViewProduct"
+        android:text="Add Product"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextProductPrice" />
+
+    <Button
+        android:id="@+id/buttonViewListProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageViewProduct"
+        android:text="List Product"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAddProduct" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
