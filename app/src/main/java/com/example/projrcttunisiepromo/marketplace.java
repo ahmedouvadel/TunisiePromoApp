@@ -94,14 +94,6 @@ public class marketplace extends AppCompatActivity {
         });
 
 
-      //Add Product Methode
-       /**addProduct.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), AddProduct.class));
-            }
-        }); */
-
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

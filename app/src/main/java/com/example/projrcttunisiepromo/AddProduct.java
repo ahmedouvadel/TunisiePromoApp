@@ -65,7 +65,7 @@ public class AddProduct extends AppCompatActivity {
         listProductbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AddProduct.this, marketplace.class));
+                startActivity(new Intent(AddProduct.this, merchantsplace.class));
                 finish();
             }
         });
