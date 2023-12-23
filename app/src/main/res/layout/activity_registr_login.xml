@@ -98,7 +98,7 @@
         android:id="@+id/buttonregistr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="64dp"
         android:elevation="7dp"
         android:onClick="signUp"
         android:padding="15dp"
@@ -135,5 +135,29 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView2"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+    <CheckBox
+        android:id="@+id/checkBoxCustomer"
+        android:layout_width="104dp"
+        android:layout_height="36dp"
+        android:text="Customer"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonregistr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/buttonregistr"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword"
+        app:layout_constraintVertical_bias="0.164" />
+
+    <CheckBox
+        android:id="@+id/checkBoxMerchant"
+        android:layout_width="107dp"
+        android:layout_height="35dp"
+        android:text="Merchant"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonregistr"
+        app:layout_constraintEnd_toStartOf="@+id/buttonregistr"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword"
+        app:layout_constraintVertical_bias="0.174" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

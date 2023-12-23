@@ -17,14 +17,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_height="match_parent"
         android:scrollbars="vertical" />
 
-    <Button
-        android:id="@+id/buttonAddProduct"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="AddProduct"
-        android:text="AddProduct" />
+
 
 </LinearLayout>

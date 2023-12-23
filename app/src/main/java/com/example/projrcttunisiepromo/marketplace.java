@@ -18,6 +18,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -25,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class marketplace extends AppCompatActivity {
-    Button logoutBtn, addProduct;
+    Button logoutBtn ;
     FirebaseUser user;
     FirebaseAuth mAuth;
     private RecyclerView recyclerView;
@@ -41,10 +42,9 @@ public class marketplace extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mAuth = FirebaseAuth.getInstance();
         setContentView(R.layout.activity_marketplace);
+        mAuth = FirebaseAuth.getInstance();
         logoutBtn = findViewById(R.id.buttonLogout);
-        addProduct = findViewById(R.id.buttonAddProduct);
         user = mAuth.getCurrentUser();
         if (user == null){
             Intent intent = new Intent(getApplicationContext(), Login.class);
@@ -94,13 +94,13 @@ public class marketplace extends AppCompatActivity {
         });
 
 
-
-        addProduct.setOnClickListener(new View.OnClickListener() {
+      //Add Product Methode
+       /**addProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), AddProduct.class));
             }
-        });
+        }); */
 
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
