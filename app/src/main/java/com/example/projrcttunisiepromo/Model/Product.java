@@ -1,5 +1,7 @@
 package com.example.projrcttunisiepromo.Model;
 
+import android.widget.EditText;
+
 import com.google.firebase.database.IgnoreExtraProperties;
 
 @IgnoreExtraProperties
@@ -7,23 +9,28 @@ public class Product {
     private String productId;
     private String productname;
     private double productprice;
+
+    private double productpromo;
+
+    private String Description;
     private String productimageUrl;
 
 
     // Constructor, getters, and setters
 
-    public Product(String productId, String productName, double price, String imageUrl) {
+    public Product(String productId, String productName, double price, double productpromo, String imageUrl, String description) {
         this.productId = productId;
         this.productname = productName;
         this.productprice = price;
         this.productimageUrl = imageUrl;
+        this.Description = description;
     }
 
 
     public Product() {
     }
 
-    public Product(String productName, double price, String imageUrl) {
+    public Product(String productName, double price , double productpromo, String imageUrl , String description) {
     }
 
     public String getProductId() {
@@ -54,5 +61,21 @@ public class Product {
 
     public void setImageUrl(String imageUrl) {
         this.productimageUrl = imageUrl;
+    }
+
+    public double getProductpromo() {
+        return productpromo;
+    }
+
+    public void setProductpromo(double productpromo) {
+        this.productpromo = productpromo;
+    }
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String description) {
+        Description = description;
     }
 }

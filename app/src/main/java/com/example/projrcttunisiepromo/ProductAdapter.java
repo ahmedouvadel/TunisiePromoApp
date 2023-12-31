@@ -48,8 +48,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         Product product = productList.get(position);
 
         holder.productID.setText("Product ID: " + product.getProductId());
-        holder.Name.setText("Product Name: " + product.getName());
+        holder.Name.setText("Name: " + product.getName());
         holder.Price.setText("Price:" + product.getProductprice() +"Dt");
+        holder.Promo.setText("Promo:" + product.getProductpromo() +"Dt");
+        holder.Description.setText("Description:" + product.getDescription());
         // Use Glide to load the image from the URL
         Glide.with(context)
                 .load(product.getImageUrl())
@@ -72,7 +74,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     }
 
     public static class ProductViewHolder extends RecyclerView.ViewHolder {
-        TextView productID, Name, Price;
+        TextView productID, Name, Price, Promo ,Description;
         ImageView Img;
 
         public ProductViewHolder(@NonNull View itemView) {
@@ -81,6 +83,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             Name = itemView.findViewById(R.id.textViewProductName);
             Price = itemView.findViewById(R.id.textViewProductPrice);
             Img = itemView.findViewById(R.id.imageViewProduct);
+            Promo = itemView.findViewById(R.id.textViewProductPrice);
+            Description = itemView.findViewById(R.id.textViewProductDescription);
+
         }
     }
 }

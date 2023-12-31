@@ -7,35 +7,51 @@
     tools:context=".AddProduct">
 
     <EditText
-        android:background="@drawable/edit_text_bg"
         android:id="@+id/editTextProductName"
-        android:layout_width="322dp"
-        android:layout_height="52dp"
+        android:layout_width="323dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/edit_text_bg"
         android:hint="  Product Name"
-        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextProductID" />
 
+
     <EditText
-        android:background="@drawable/edit_text_bg"
         android:id="@+id/editTextProductPrice"
-        android:layout_width="322dp"
-        android:layout_height="52dp"
+        android:layout_width="323dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_bg"
         android:hint="  Product Price"
-        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextProductName" />
 
     <EditText
+        android:id="@+id/editTextProductPromo"
+        android:layout_width="326dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/edit_text_bg"
+        android:hint="  Product Promo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextProductPrice" />
+
+    <EditText
         android:id="@+id/editTextProductID"
         android:layout_width="322dp"
-        android:layout_height="52dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edit_text_bg"
         android:hint="  Product ID"
-        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonSelectImage" />
 
@@ -44,9 +60,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextProductName"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="16dp"
         android:text="Select Image"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewProduct" />
 
@@ -55,7 +72,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_below="@id/buttonSelectImage"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,20 +84,33 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/imageViewProduct"
         android:text="Add Product"
-        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextProductPrice" />
+        tools:layout_editor_absoluteY="584dp" />
 
     <Button
         android:id="@+id/buttonViewListProduct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/imageViewProduct"
+        android:layout_marginTop="20dp"
         android:text="List Product"
-        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonAddProduct" />
+
+
+    <EditText
+        android:id="@+id/TextInputDescription"
+        android:layout_width="356dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edit_text_bg"
+        android:hint=" Description Of Product"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextProductPromo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

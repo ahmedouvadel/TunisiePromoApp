@@ -62,6 +62,8 @@ public class ProductDetailActivity extends AppCompatActivity {
                     textViewProductName.setText("Product Name: " + product.getName());
                     textViewProductId.setText("Product ID: " + product.getProductId());
                     textViewProductPrice.setText("Price:" + product.getProductprice() +"Dt");
+                    textViewProductPromo.setText("Promo:" + product.getProductpromo() +"Dt");
+                    textViewProductDiscription.setText("Description:" + product.getDescription());
 
                     // Load product image using Picasso
                     Picasso.get().load(product.getImageUrl()).into(imageViewProduct);
