@@ -15,6 +15,9 @@
         android:theme="@style/Theme.ProjrctTunisiePromo"
         tools:targetApi="31">
         <activity
+            android:name=".ProductDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".merchantsplace"
             android:exported="false" />
         <activity

@@ -25,19 +25,13 @@ import com.google.firebase.storage.StorageReference;
 import java.util.ArrayList;
 import java.util.List;
 
-public class marketplace extends AppCompatActivity {
-    Button logoutBtn ;
+public class marketplace extends AppCompatActivity implements ProductAdapter.OnItemClickListener {
+    Button logoutBtn;
     FirebaseUser user;
     FirebaseAuth mAuth;
     private RecyclerView recyclerView;
     private ProductAdapter productAdapter;
     private List<Product> productList;
-
-   /** @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-
-    } */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,18 +40,21 @@ public class marketplace extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         logoutBtn = findViewById(R.id.buttonLogout);
         user = mAuth.getCurrentUser();
-        if (user == null){
+        if (user == null) {
             Intent intent = new Intent(getApplicationContext(), Login.class);
             startActivity(intent);
             finish();
         }
-        //Recy View
+
+        // RecyclerView
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         productList = new ArrayList<>();
         productAdapter = new ProductAdapter(productList, this);
+        productAdapter.setOnItemClickListener(this); // Set the click listener
         recyclerView.setAdapter(productAdapter);
+
         // Fetch product data from Firebase Realtime Database
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("/products");
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -69,6 +66,7 @@ public class marketplace extends AppCompatActivity {
                     Product product = dataSnapshot.getValue(Product.class);
                     productList.add(product);
                 }
+
                 // Fetch image URLs from Firebase Storage
                 StorageReference storageReference = FirebaseStorage.getInstance().getReference("UPLOAD");
 
@@ -89,10 +87,9 @@ public class marketplace extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                // Handle error
             }
         });
-
 
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,7 +100,20 @@ public class marketplace extends AppCompatActivity {
                 finish();
             }
         });
+    }
 
+    @Override
+    public void onItemClick(int position) {
+        // Handle item click, e.g., open ProductDetailActivity with the selected product
+        Product selectedProduct = productList.get(position);
+        Intent intent = new Intent(this, ProductDetailActivity.class);
+        intent.putExtra("productId", selectedProduct.getProductId());
+        startActivity(intent);
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
     }
 }
 

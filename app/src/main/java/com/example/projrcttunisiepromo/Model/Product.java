@@ -9,6 +9,7 @@ public class Product {
     private double productprice;
     private String productimageUrl;
 
+
     // Constructor, getters, and setters
 
     public Product(String productId, String productName, double price, String imageUrl) {

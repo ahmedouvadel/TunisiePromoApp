@@ -19,11 +19,23 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     private List<Product> productList;
     private Context context;
+    private OnItemClickListener mListener; // Define the interface reference
+
+    // Define an interface to handle clicks
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
 
     public ProductAdapter(List<Product> productList, Context context) {
         this.productList = productList;
         this.context = context;
     }
+
+    // Set the listener
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mListener = listener;
+    }
+
     @NonNull
     @Override
     public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -35,17 +47,23 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
         Product product = productList.get(position);
 
-        holder.productID.setText(product.getProductId());
-        holder.Name.setText(product.getName());
-        holder.Price.setText(String.valueOf(product.getProductprice()));
+        holder.productID.setText("Product ID: " + product.getProductId());
+        holder.Name.setText("Product Name: " + product.getName());
+        holder.Price.setText("Price:" + product.getProductprice() +"Dt");
         // Use Glide to load the image from the URL
         Glide.with(context)
                 .load(product.getImageUrl())
                 .into(holder.Img);
 
-
-
-
+        // Set the click listener on the item view
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mListener != null) {
+                    mListener.onItemClick(position);
+                }
+            }
+        });
     }
 
     @Override
@@ -53,10 +71,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         return productList.size();
     }
 
-
     public static class ProductViewHolder extends RecyclerView.ViewHolder {
-        TextView productID , Name, Price;
+        TextView productID, Name, Price;
         ImageView Img;
+
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
             productID = itemView.findViewById(R.id.textviewproductID);
